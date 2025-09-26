@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun Friday Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Header -->
+      <div class="chat-header">
+        <button class="back-btn">←</button>
+        <div class="group-info">
+          <img src="group-avatar.png" alt="Group" class="group-avatar" />
+          <span class="group-name">Fun Friday Group</span>
+        </div>
+        <button class="anon-toggle" id="anonToggle">🕵️</button>
+      </div>
+
+      <!-- Messages area -->
+      <div class="chat-messages">
+        <!-- Example incoming -->
+        <div class="message incoming">
+          <div class="sender">Anonymous</div>
+          <div class="bubble">I'm Excited For this Event! Ho-Ho</div>
+          <div class="time">11:56 AM</div>
+        </div>
+
+        <!-- Example outgoing -->
+        <div class="message outgoing">
+          <div class="bubble">Hi Guysss 👋</div>
+          <div class="time">12:31 PM</div>
+        </div>
+      </div>
+
+      <!-- Footer / input -->
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button id="sendBtn">➤</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
