@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fun Friday Chat</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="chat-container">
@@ -12,34 +19,62 @@
       <div class="chat-header">
         <button class="back-btn">←</button>
         <div class="group-info">
-          <img src="group-avatar.png" alt="Group" class="group-avatar" />
-          <span class="group-name">Fun Friday Group</span>
+          <div class="group-avatar">
+            <img src="" alt="Group Avatar" />
+          </div>
+          <div class="group-details">
+            <div class="group-name">Fun Friday Group</div>
+            <div class="online-status">
+              <span class="online-dot"></span>
+              24 members online
+            </div>
+          </div>
         </div>
-        <button class="anon-toggle" id="anonToggle">🕵️</button>
+        <button class="anon-toggle" id="anonToggle">
+          <i class="fa-solid fa-user-secret"></i>
+        </button>
       </div>
 
       <!-- Messages area -->
-      <div class="chat-messages">
-        <!-- Example incoming -->
-        <div class="message incoming">
-          <div class="sender">Anonymous</div>
-          <div class="bubble">I'm Excited For this Event! Ho-Ho</div>
-          <div class="time">11:56 AM</div>
+      <div class="chat-messages" id="messagesContainer">
+        <div class="message incoming with-avatar">
+          <div class="message-avatar">
+            <img src="" alt="User Avatar" />
+          </div>
+          <div class="message-content">
+            <div class="sender">Abhay Shukla</div>
+            <div class="bubble">We have Surprise For you!!</div>
+            <div class="time">11:35 AM</div>
+          </div>
         </div>
-
-        <!-- Example outgoing -->
-        <div class="message outgoing">
-          <div class="bubble">Hi Guysss 👋</div>
-          <div class="time">12:31 PM</div>
-        </div>
+      </div>
+      <!-- Anonymous status indicator -->
+      <div class="anonymous-status" id="anonymousStatus">
+        <i class="fa-solid fa-user"></i>
+        Now you're appearing as Anonymous!
+        <i class="fa-solid fa-user"></i>
       </div>
 
       <!-- Footer / input -->
       <div class="chat-input">
-        <input type="text" id="messageInput" placeholder="Type a message..." />
-        <button id="sendBtn">➤</button>
+        <div class="input-container">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Type a message ..."
+          />
+          <button class="camera-btn">
+          <i class="fa-solid fa-camera"></i>
+          </button>
+          <i class="fa-solid fa-paperclip"></i>
+          </button>
+        </div>
+        <button class="send-btn" id="sendBtn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
       </div>
     </div>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
